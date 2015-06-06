@@ -1,0 +1,6 @@
+/.idea/
+/.vagrant/
+
+provisioners/chef/berks-cookbooks
+
+goserver.box

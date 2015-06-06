@@ -1,0 +1,15 @@
+{
+  "name": "webserver",
+  "description": "Go CD server",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+  },
+  "override_attributes": {
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[go_cd::server]"
+  ],
+  "env_run_lists": {
+  }
+}
