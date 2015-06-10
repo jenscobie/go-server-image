@@ -21,9 +21,19 @@ function helptext {
     echo "    build        Build image"
     echo "    deploy       Deploy image to local virtual machine"
     echo "    destroy      Destroy local virtual machine"
+    echo "    virtualbox   Build VirtualBox image"
 }
 
-function buildvm {
+function build_all {
+    build_virtualbox
+    build_amazon
+}
+
+function build_amazon {
+    packer build -only amazon-ebs goserver.json
+}
+
+function build_virtualbox {
     rm goserver.box || true
     packer build -only virtualbox-iso goserver.json
     vagrant box remove goserver || true
@@ -33,7 +43,11 @@ function buildvm {
 [[ $@ ]] || { helptext; exit 1; }
 
 case "$1" in
-    build) buildvm
+    build) build_all
+    ;;
+    amazon) build_amazon
+    ;;
+    virtualbox) build_virtualbox
     ;;
     deploy) vagrant up --no-provision
     ;;
