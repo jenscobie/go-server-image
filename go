@@ -41,7 +41,7 @@ function build_virtualbox {
     vagrant box add goserver goserver.box
 }
 
-[[ $@ ]] || { helptext; exit 1; }
+[[ $@ ]] || { help_text; exit 1; }
 
 case "$1" in
     build) build_all
