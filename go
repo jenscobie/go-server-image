@@ -14,14 +14,15 @@ packer version >/dev/null 2>&1 || { echo >&2 "Packer is required. Please install
     mv berks-cookbooks provisioners/chef;
 }
 
-function helptext {
+function help_text {
     echo "Usage: ./go <command>"
     echo ""
     echo "Available commands are:"
-    echo "    build        Build image"
+    echo "    amazon       Build an Amazon image"
+    echo "    build        Build all images"
     echo "    deploy       Deploy image to local virtual machine"
     echo "    destroy      Destroy local virtual machine"
-    echo "    virtualbox   Build VirtualBox image"
+    echo "    virtualbox   Build a VirtualBox image"
 }
 
 function build_all {
@@ -53,6 +54,6 @@ case "$1" in
     ;;
     destroy) vagrant destroy -f
     ;;
-    help) helptext
+    help) help_text
     ;;
 esac

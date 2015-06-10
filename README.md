@@ -25,9 +25,11 @@ To get the latest version of the Go CD server setup with minimal effort by provi
     Usage: ./go <command>
     
     Available commands are:
-        build        Build image
+        amazon       Build an Amazon image
+        build        Build all images
         deploy       Deploy image to local virtual machine
         destroy      Destroy local virtual machine
+        virtualbox   Build a VirtualBox image
 
 ## Author
 
