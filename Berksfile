@@ -1,3 +1,3 @@
 source "https://supermarket.chef.io"
 
-cookbook "go_cd"
+cookbook 'go', git: 'git://github.com/ThoughtWorksInc/go-cookbook.git'

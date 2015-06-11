@@ -31,14 +31,14 @@ function build_all {
 }
 
 function build_amazon {
-    packer build -only amazon-ebs goserver.json
+    packer build -only amazon-instance goserver.json
 }
 
 function build_virtualbox {
-    rm goserver.box || true
+    rm go-server.box || true
     packer build -only virtualbox-iso goserver.json
-    vagrant box remove goserver || true
-    vagrant box add goserver goserver.box
+    vagrant box remove go-server || true
+    vagrant box add go-server go-server.box
 }
 
 [[ $@ ]] || { help_text; exit 1; }

@@ -1,4 +1,7 @@
 {
+  "push": {
+    "name": "jenscobie/go-server"
+  },
   "builders": [
     {
       "type": "virtualbox-iso",
@@ -44,7 +47,7 @@
   "post-processors": [
     {
       "type": "vagrant",
-      "output": "goserver.box",
+      "output": "go-server.box",
       "only": [ "virtualbox-iso" ]
     }
   ],
