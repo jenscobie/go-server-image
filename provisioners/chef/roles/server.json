@@ -1,14 +1,24 @@
 {
-  "name": "webserver",
+  "name": "server",
   "description": "Go CD server",
   "json_class": "Chef::Role",
   "default_attributes": {
+    "java": {
+      "install_flavor": "oracle",
+      "jdk_version": 8,
+      "oracle": {
+        "accept_oracle_download_terms": true
+      }
+    },
+    "go": {
+      "version": "15.1.0-1863"
+    }
   },
   "override_attributes": {
   },
   "chef_type": "role",
   "run_list": [
-    "recipe[go_cd::server]"
+    "recipe[go::server]"
   ],
   "env_run_lists": {
   }

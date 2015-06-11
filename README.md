@@ -18,7 +18,7 @@ To get the latest version of the Go CD server setup with minimal effort by provi
 1. Install the requirements listed above
 2. Run ```./go build```
 3. Run ```./go deploy```
-5. Visit [http://192.168.0.1:8153](http://192.168.0.1:8153)
+5. Visit [http://192.168.0.2:8153](http://192.168.0.2:8153)
 
 ## Usage
 
