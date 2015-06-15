@@ -31,7 +31,7 @@ function build_all {
 }
 
 function build_amazon {
-    packer build -only amazon-instance goserver.json
+    packer build -only amazon-ebs goserver.json
 }
 
 function build_virtualbox {
